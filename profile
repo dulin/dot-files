@@ -35,16 +35,16 @@ echo -e "\033[1;32m|------------------------------------------------------------
 echo ""
 echo -e "\033[1;31mW\e[1;32mi\e[1;33mt\e[1;34ma\e[1;35mj: \033[1;34m$USER \033[1;32mna serwerze\033[1;31m: $HOST"
 echo ""
-echo -e "\033[1;34mWersja Kernela: \033[1;33m$KERNEL"
-echo -e "\033[1;34mZalogowani użytkownicy: \033[1;33m$USERS"
-echo -e "\033[1;34mUptime: \033[1;33m$UPTIME"
-echo -e "\033[1;34mTwoje ip to:\033[1;33m $ADDR_IP"
+echo -e "\033[1;34mKernel Version: \033[1;33m$KERNEL"
+echo -e "\033[1;34mLogged Users: \033[1;33m$USERS"
+echo -e "\033[1;34mSystem Uptime: \033[1;33m$UPTIME"
+echo -e "\033[1;34mYour Ip Address:\033[1;33m $ADDR_IP"
 echo ""
 PS1='\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;32m\]\H \[\033[01;33m\]: \[\033[01;34m\]\w \[\033[00m\]\] $ '
 #PS1='[\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;32m\]\H\[\033[00m\]]\[\033[01;33m\] > \[\033[01;34m\]\w \[\033[00m\]\]$ '
 PS2='> '
 PS4='+ '
-echo "Bledne proby logowan:"
+echo "Failure logins:"
 if [ "`id -u`" -eq 0 ]; then
 	grep --color=auto -E "Failed password" /var/log/auth*
 fi
@@ -61,10 +61,14 @@ alias egrep='egrep --color=auto'
 alias df='df -a -h -T'
 alias du='du -a -h -c'
 alias rmsvn='find . -name .svn -print0 | xargs -0 rm -rf'
-alias test='netstat -apn | grep EST | grep 7172 | wc -l'
+alias wwwcon='netstat -apn | grep EST | grep :80 | wc -l'
 alias s='sensors'
-alias upg='apt-get update && apt-file update && apt-get dist-upgrade && apt-get clean'
+alias upg='apt-get update && apt-file update && apt-get -y dist-upgrade && apt-get clean'
 alias off='shutdown -h now'
+alias rmsvn='find . -name .svn -print0 | xargs -0 rm -rf'
+alias rmgit='find . -name .git -print0 | xargs -0 rm -rf'
+alias gc='git clone'
+alias sgc='screen -AmdS git git clone'
 
 export EDITOR=vim
 
@@ -76,9 +80,7 @@ export PAGER='/usr/bin/less'
 
 
 
-alias wgets='wget --referer="http://www.google.com" --user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6" --header="Accept:
-text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5" --header="Accept-Language: en-us,en;q=0.5" --header="Accept-Encoding: gzip,deflate"
---header="Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7" --header="Keep-Alive: 300"'
+alias wgets='wget --referer="http://www.google.com" --user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6" --header="Accept:text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5" --header="Accept-Language: en-us,en;q=0.5" --header="Accept-Encoding: gzip,deflate" --header="Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7" --header="Keep-Alive: 300"'
 alias wget='wget -e robots=off'
 alias ekg='export LANG="pl_PL.ISO-8859-2";screen -S ekg ekg'
 alias rekg='export LANG="pl_PL.ISO-8859-2";screen -r ekg'
@@ -88,8 +90,7 @@ alias rirssi='export LANG=cp-1250;screen -r irc'
 fi 
 # Developer Engine!
 # Enable CCache
-
-export CCACHE_DIR="/home/ccache"
+export CCACHE_DIR="~/ccache"
 export PATH=/usr/lib/ccache/:$PATH	
 ccache -F 0 -M 8G -c &>/dev/null
 
