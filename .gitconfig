@@ -1,3 +1,15 @@
+[color]
+	ui = auto
+
+[alias]
+	st = status
+	di = diff
+	ci = commit
+	br = branch
+	llog = log --date=local
+[rerere]
+	enabled = true
+
 [user]
-	name = Marcin Duliński
+	name = Marcin Dulinski - Hosting
 	email = marcin@dulin.pl

@@ -1,0 +1,49 @@
+!-- colors --!
+urxvt.background:         #140c0b
+urxvt.foreground:         #877a70
+! black
+urxvt.color0:             #403f3e
+urxvt.color8:             #666362
+! red
+urxvt.color1:             #91444d
+urxvt.color9:             #c78186
+! green
+urxvt.color2:             #6b853d
+urxvt.color10:            #abbd80
+! yellow
+urxvt.color3:             #916949
+urxvt.color11:            #cca88b
+! blue
+urxvt.color4:             #557282
+urxvt.color12:            #8eabbd
+! magenta
+urxvt.color5:             #78516d
+urxvt.color13:            #a8879f
+! cyan
+urxvt.color6:             #58756c
+urxvt.color14:            #8ca8a2
+! white
+urxvt.color7:             #94928f
+urxvt.color15:            #cdcdcd
+
+!-- urxvt --!
+urxvt.font:               -*-tamsynu-medium-r-*-*-14-*-*-*-*-*-*-*
+urxvt.boldFont:           -*-tamsynu-bold-*-*-*-14-*-*-*-*-*-*-*
+urxvt.italicFont:         -*-tamsynu-medium-i-*-*-14-*-*-*-*-*-*-*
+urxvt.boldItalicFont:         -*-tamsynu-medium-i-*-*-14-*-*-*-*-*-*-*
+urxvt.scrollBar:          false
+urxvt.internalBorder:     2
+urxvt.geometry:           81x21
+urxvt.urgentOnBell:       true
+urxvt.cursorBlink:        true
+urxvt.perl-ext-common:    default,matcher
+urxvt.url-launcher:       /usr/bin/dwb
+urxvt.matcher.button:     1
+
+!-- xft --!
+!Xft.autohint:             0
+!Xft.lcdfilter:            lcddefault
+!Xft.hintstyle:            hintfull
+!Xft.hinting:              1
+!Xft.antialias:            1
+!Xft.rgba:                 rgb

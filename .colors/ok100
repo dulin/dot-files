@@ -1,0 +1,38 @@
+! OK100
+
+*background: #00050A
+*foreground: #7C838A
+
+! black
+*color0:     #0A1724
+*color8:     #3F4D61
+
+! red
+*color1:     #9D616A
+*color9:     #B87B83
+
+! green
+*color2:     #4E7D45
+*color10:    #68975D
+
+! yellow
+*color3:     #767609
+*color11:    #928F2A
+
+! blue
+*color4:     #3A72B2
+*color12:    #588BCC
+
+! magenta
+*color5:     #676FA1
+*color13:    #8188BC
+
+! cyan
+*color6:     #1F7E7E
+*color14:    #409898
+
+! white
+*color7:     #5E687D
+*color15:    #8A9299
+
+! vim:ft=xdefaults
